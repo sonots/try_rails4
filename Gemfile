@@ -1,45 +1,43 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
-
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
-# Use SCSS for stylesheets
+ruby '2.0.0'
+gem 'rails', '~> 4.0.0'
+# gem 'sqlite3' # Use sqlite (>= 3.6.16) as the database
+gem 'mysql2' # Use myql as the database
 gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
+gem 'coffee-rails', '~> 4.0.0' # compressor for JavaScript assets
+gem 'therubyracer', platforms: :ruby # Embeded V8 Javascript Interpreter (required for sprockets, asset pipeline)
 gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jquery-ui-rails'
+# gem 'turbolinks'
+# gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'unicorn'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+gem 'slim', :require => 'slim-rails'
+gem "slim-rails"
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass' # http://d.hatena.ne.jp/sandmark/20120321/1332292995
+gem 'bootswatch-rails'
+gem 'bootstrap-datetimepicker-rails'
+gem 'font-awesome-rails' # Font-Awesome web fonts
+
+group :development do
+  gem 'yard' # document genration
+  gem 'better_errors' # sophisticated error view
+  gem 'binding_of_caller' # add irb/pry on better_rails view
+  gem 'bullet' # warn N+1 queries
+  gem 'rack-mini-profiler' # simple profiler
+  # gem 'newrelic_rpm' # use newrelic as a performance profiler
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :development, :test do
+  gem 'spring' # rails application preloader
+  gem 'guard'
+  gem 'rspec-rails' # rails g rspec:model
+  gem 'guard-rspec' # automatically run specs
+  gem 'byebug' # ruby 2.0 debugger
+  gem 'pry'
+  gem 'pry-byebug'
+end  
