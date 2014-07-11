@@ -1,13 +1,12 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
 gem 'rails', '~> 4.0.0'
 # gem 'sqlite3' # Use sqlite (>= 3.6.16) as the database
 gem 'mysql2' # Use myql as the database
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0' # compressor for JavaScript assets
-gem 'therubyracer', platforms: :ruby # Embeded V8 Javascript Interpreter (required for sprockets, asset pipeline)
+# gem 'therubyracer', platforms: :ruby # Embeded V8 Javascript Interpreter (required for sprockets, asset pipeline)
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # gem 'turbolinks'
